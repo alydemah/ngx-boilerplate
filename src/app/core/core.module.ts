@@ -30,14 +30,16 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy
     },
-    { 
-      provide: HTTP_INTERCEPTORS, 
-      useClass: JwtInterceptor, multi: true 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
     },
-    { 
-      provide: HTTP_INTERCEPTORS, 
-      useClass: ErrorInterceptor, multi: true 
-    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
   ]
 })
 export class CoreModule {

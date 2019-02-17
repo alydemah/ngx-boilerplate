@@ -32,8 +32,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-   // convenience getter for easy access to form fields
-   get f() { return this.loginForm.controls; }
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.loginForm.controls;
+  }
 
   login() {
     this.isLoading = true;
@@ -41,10 +43,11 @@ export class LoginComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
-        return;
+      return;
     }
 
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService
+      .login(this.f.username.value, this.f.password.value)
       .pipe(
         finalize(() => {
           this.loginForm.markAsPristine();
@@ -57,9 +60,10 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-            log.debug(`Login error: ${error}`);
-            this.error = error;
-        });
+          log.debug(`Login error: ${error}`);
+          this.error = error;
+        }
+      );
   }
 
   setLanguage(language: string) {
