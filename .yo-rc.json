@@ -1,12 +1,10 @@
 {
   "generator-ngx-rocket": {
-    "version": "5.2.0",
+    "version": "6.2.0",
     "props": {
       "location": "path",
       "appName": "\tngx-boilerplate",
-      "target": [
-        "web"
-      ],
+      "target": ["web"],
       "pwa": true,
       "ui": "bootstrap",
       "auth": true,
